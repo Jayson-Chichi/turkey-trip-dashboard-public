@@ -10,13 +10,14 @@ Mobile-first personal travel dashboard for the 2026 Turkey trip.
 - Places and More sections for hotels, attractions, checklist, weather notes, currency, and emergency information.
 - Public/private entry points so itinerary updates stay shared while budget details remain private.
 - Dynamic weather through Open-Meteo, with graceful fallback when the trip date is outside the forecast range.
+- Places to Consider and Food Ideas with Google Maps links.
 - Static-file architecture suitable for GitHub Pages.
 
 ## Public vs Private
 
 - `index.html` and `index.public.html` are the public version. They do not load budget data.
 - `index.private.html` is the private version. It loads `data/budget.private.js`.
-- Shared itinerary, flights, places, and tools live in `data/trip.js`; update this once and both versions change together.
+- Shared itinerary, flights, places, and tools live in `data/trip.js`; reference attractions and food ideas live in `data/places.ideas.js`.
 - Private costs live only in `data/budget.private.js`; do not upload this file to a public website.
 
 For a public GitHub Pages upload, include the public files only and exclude:
@@ -26,6 +27,8 @@ data/budget.private.js
 app.private.js
 index.private.html
 ```
+
+Also keep `data/places.private.js` out of a public upload. The public entry point is `index.html`.
 
 ## Edit Trip Data
 
@@ -42,6 +45,10 @@ Private budget content lives in:
 ```text
 data/budget.private.js
 ```
+
+## GitHub Pages
+
+Upload the public files to a public repository with `index.html` as the entry point. The `.gitignore` file already excludes the private dashboard and budget files. Do not publish `index.private.html` or expose the local private URL as a public link.
 
 ## Run Locally
 
@@ -60,3 +67,4 @@ http://localhost:5173
 ## Privacy
 
 Do not add passport numbers, booking references, boarding pass QR codes, ticket barcodes, credit card information, personal phone numbers, private IDs, or sensitive reservation credentials.
+
