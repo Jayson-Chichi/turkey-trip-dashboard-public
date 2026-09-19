@@ -182,7 +182,7 @@ function renderTimelineMapActions(event) {
   const encoded = encodeURIComponent(query);
   return `
     <div class="timeline-map-actions">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=${encoded}" target="_blank" rel="noreferrer">Navigate / 導航</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=${encoded}">Open Location / 開啟定位</a>
     </div>
   `;
 }
@@ -204,7 +204,7 @@ function getMapQueryForEvent(event) {
     ["kayseri airport", "Kayseri Airport ASR"],
     ["mithra", "Mithra Cave Hotel Cappadocia Goreme Turkey"],
     ["stone house", "Stone House Cave Hotel Goreme Turkey"],
-    ["gezi", "Gezi Hotel Bosphorus Mete Caddesi No 34 Taksim Istanbul"],
+    ["gezi", "Gezi Hotel Bosphorus Istanbul"],
     ["uchisar", "Uchisar Village Cappadocia Turkey"],
     ["kaymakli", "Kaymakli Underground City Cappadocia Turkey"],
     ["ihlara", "Ihlara Valley Turkey"],
@@ -258,7 +258,7 @@ function renderDaySummary() {
   const hotelText = selectedDay.hotel || "TBD";
   const hotelQuery = shouldShowBackToHotel(selectedDay) ? getMapQueryForEvent({ title: hotelText, location: hotelText, note: "" }) : "";
   const hotelButton = hotelQuery
-    ? `<a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(hotelQuery)}" target="_blank" rel="noreferrer">Hotel nav / 飯店導航</a>`
+    ? `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(hotelQuery)}">Hotel location / 飯店定位</a>`
     : "";
 
   el.innerHTML = `
@@ -386,7 +386,6 @@ function renderPlaces() {
     .map((place) => {
       const query = encodeURIComponent(place.query);
       const mapUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
-      const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${query}`;
       return `
         <article class="info-card map-card">
           <div>
@@ -396,8 +395,7 @@ function renderPlaces() {
             <small>${place.address}</small>
           </div>
           <div class="map-actions">
-            <a href="${mapUrl}" target="_blank" rel="noreferrer">Open Map / 開地圖</a>
-            <a href="${directionsUrl}" target="_blank" rel="noreferrer">Directions / 導航</a>
+            <a href="${mapUrl}">Open Location / 開啟定位</a>
           </div>
         </article>
       `;
@@ -462,8 +460,7 @@ function renderPlaceIdeas() {
                   <p>${item.note}</p>
                 </div>
                 <div class="map-actions">
-                  <a href="https://www.google.com/maps/search/?api=1&query=${query}" target="_blank" rel="noreferrer">Open Map / 開地圖</a>
-                  <a href="https://www.google.com/maps/dir/?api=1&destination=${query}" target="_blank" rel="noreferrer">Directions / 導航</a>
+                  <a href="https://www.google.com/maps/search/?api=1&query=${query}">Open Location / 開啟定位</a>
                 </div>
               </article>
             `;
