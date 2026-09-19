@@ -9,4 +9,5 @@ app.private.js
 index.private.html
 data/budget.private.js
 data/places.private.js
+data/trip.private.js
 
