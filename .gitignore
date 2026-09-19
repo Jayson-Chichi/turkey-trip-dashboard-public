@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+.env
+
+# Keep the private dashboard and budget out of a public GitHub repository.
+app.private.js
+index.private.html
+data/budget.private.js
+data/places.private.js
+
