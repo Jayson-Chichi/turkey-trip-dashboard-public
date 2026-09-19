@@ -1,4 +1,13 @@
-import { airports, flights, itinerary, journeys, mapLinks, places, tools, trip } from "./data/trip.js";
+import { airports as sharedAirports, flights as sharedFlights, itinerary as sharedItinerary, journeys as sharedJourneys, mapLinks as sharedMapLinks, places as sharedPlaces, tools as sharedTools, trip as sharedTrip } from "./data/trip.js";
+
+let airports = sharedAirports;
+let flights = sharedFlights;
+let itinerary = sharedItinerary;
+let journeys = sharedJourneys;
+let mapLinks = sharedMapLinks;
+let places = sharedPlaces;
+let tools = sharedTools;
+let trip = sharedTrip;
 
 const today = new Date();
 const tripStart = dateOnly(trip.startDate);
@@ -759,7 +768,10 @@ function renderAll() {
   renderWeather();
 }
 
-export function initDashboard({ budget = null, placeIdeas = null } = {}) {
+export function initDashboard({ budget = null, placeIdeas = null, tripData = null } = {}) {
+  if (tripData) {
+    ({ airports, flights, itinerary, journeys, mapLinks, places, tools, trip } = tripData);
+  }
   activeBudget = budget;
   activePlaceIdeas = placeIdeas;
   selectedDay = getActiveDay();
