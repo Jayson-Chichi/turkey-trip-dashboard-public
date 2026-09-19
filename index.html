@@ -14,7 +14,7 @@
     <div class="app-shell">
       <header class="topbar" aria-label="Trip overview">
         <div>
-          <p class="eyebrow">Personal Trip</p>
+          <p class="eyebrow">Personal Trip / 個人旅行</p>
           <h1>Turkey 2026</h1>
           <p class="date-range">2026/09/22 - 2026/10/01</p>
         </div>
@@ -25,7 +25,7 @@
         <section class="view is-active" id="todayView" aria-labelledby="todayTitle">
           <div class="hero-panel">
             <div class="hero-copy">
-              <p class="eyebrow">Next Stop</p>
+              <p class="eyebrow">Next Stop / 下一站</p>
               <h2 id="todayTitle">準備出發</h2>
               <p id="todaySubtitle">Loading trip status...</p>
             </div>
@@ -34,13 +34,13 @@
 
           <section class="weather-card" aria-labelledby="weatherTitle">
             <div>
-              <p class="eyebrow">Weather</p>
-              <h3 id="weatherTitle">旅途中城市天氣</h3>
+              <p class="eyebrow">Weather / 天氣</p>
+              <h3 id="weatherTitle">旅途中城市天氣 / City Weather</h3>
             </div>
             <div class="weather-grid" id="weatherGrid">
               <div class="metric-card">
-                <span class="metric-label">狀態</span>
-                <strong>載入中</strong>
+                <span class="metric-label">狀態 / Status</span>
+                <strong>載入中 / Loading</strong>
               </div>
             </div>
           </section>
@@ -48,8 +48,8 @@
           <section class="content-section" aria-labelledby="nextItemTitle">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">Up Next</p>
-                <h3 id="nextItemTitle">下一個行程</h3>
+                <p class="eyebrow">Up Next / 下一項</p>
+                <h3 id="nextItemTitle">下一個行程 / Next Item</h3>
               </div>
             </div>
             <div id="nextItem"></div>
@@ -58,8 +58,8 @@
           <section class="content-section" aria-labelledby="todayTimelineTitle">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">Timeline</p>
-                <h3 id="todayTimelineTitle">今日時間軸</h3>
+                <p class="eyebrow">Timeline / 時間軸</p>
+                <h3 id="todayTimelineTitle">今日時間軸 / Today's Timeline</h3>
               </div>
             </div>
             <div class="timeline" id="todayTimeline"></div>
@@ -68,33 +68,36 @@
 
         <section class="view" id="tripView" aria-labelledby="tripTitle">
           <div class="page-heading">
-            <p class="eyebrow">Itinerary</p>
-            <h2 id="tripTitle">每日行程</h2>
+            <p class="eyebrow">Itinerary / 行程</p>
+            <h2 id="tripTitle">每日行程 / Daily Plan</h2>
           </div>
           <div class="date-tabs" id="dateTabs" role="tablist" aria-label="Trip dates"></div>
+          <div class="day-summary" id="daySummary"></div>
+          <div class="trip-weather-grid" id="tripWeatherGrid" aria-label="Selected day weather"></div>
           <div class="timeline" id="tripTimeline"></div>
         </section>
 
         <section class="view" id="flightsView" aria-labelledby="flightsTitle">
           <div class="page-heading">
-            <p class="eyebrow">Flights</p>
-            <h2 id="flightsTitle">航班資訊</h2>
+            <p class="eyebrow">Flights / 航班</p>
+            <h2 id="flightsTitle">航班資訊 / Flight Details</h2>
           </div>
           <div class="flight-list" id="flightList"></div>
         </section>
 
         <section class="view" id="placesView" aria-labelledby="placesTitle">
           <div class="page-heading">
-            <p class="eyebrow">Places</p>
-            <h2 id="placesTitle">地點與待補資料</h2>
+            <p class="eyebrow">Places / 地點</p>
+            <h2 id="placesTitle">地點與待補資料 / Places & Notes</h2>
           </div>
+          <div class="place-filters" id="placeFilters" aria-label="Place filters"></div>
           <div class="place-grid" id="placeGrid"></div>
         </section>
 
         <section class="view" id="moreView" aria-labelledby="moreTitle">
           <div class="page-heading">
-            <p class="eyebrow">More</p>
-            <h2 id="moreTitle">旅行工具</h2>
+            <p class="eyebrow">More / 更多</p>
+            <h2 id="moreTitle">旅行工具 / Travel Tools</h2>
           </div>
           <div class="tool-grid" id="toolGrid"></div>
         </section>
@@ -109,6 +112,7 @@
       </nav>
     </div>
 
-    <script type="module" src="./app.public.js"></script>
+    <script type="module" src="./app.public.js?v=20260919-public"></script>
   </body>
 </html>
+
