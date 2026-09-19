@@ -16,8 +16,8 @@ Mobile-first personal travel dashboard for the 2026 Turkey trip.
 ## Public vs Private
 
 - `index.html` and `index.public.html` are the public version. They do not load budget data.
-- `index.private.html` is the private version. It loads `data/budget.private.js`.
-- Shared itinerary, flights, places, and tools live in `data/trip.js`; reference attractions and food ideas live in `data/places.ideas.js`.
+- `index.private.html` is the private version. It loads `data/budget.private.js` and the private itinerary overlay in `data/trip.private.js`.
+- Public itinerary, flights, places, and tools live in `data/trip.js`; reference attractions and food ideas live in `data/places.ideas.js`.
 - Private costs live only in `data/budget.private.js`; do not upload this file to a public website.
 
 For a public GitHub Pages upload, include the public files only and exclude:
@@ -29,6 +29,7 @@ index.private.html
 ```
 
 Also keep `data/places.private.js` out of a public upload. The public entry point is `index.html`.
+Keep `data/trip.private.js` out of public uploads as well.
 
 ## Edit Trip Data
 
