@@ -97,42 +97,28 @@ export const itinerary = [
     focus: "balloon",
     events: [
       {
-        time: "Early",
+        time: "05:00",
         type: "activity",
         title: "Guvercin Balloon 熱氣球 / Hot Air Balloon",
         location: "Cappadocia",
         status: "confirmed",
-        note: "接送/集合時間待確認 / Pickup time TBD. Wind is the key weather signal.",
+        note: "通常清晨約 05:00 接送，約 08:00 結束 / Pickup is usually around 05:00, finishing around 08:00.",
       },
-    ],
-  },
-  {
-    date: "2026-09-25",
-    city: "cappadocia",
-    hotel: "Stone House Cave Hotel",
-    events: [
       {
-        time: "TBD",
+        time: "08:00-09:30",
         type: "plan",
-        title: "換飯店：Stone House Cave Hotel / Hotel Change",
-        location: "Cappadocia",
+        title: "返回飯店休息 / Rest at hotel",
+        location: "Mithra Cave Hotel Cappadocia",
         status: "confirmed",
-        note: "住宿 9/25-9/27 / Stay Sep 25-27",
+        note: "熱氣球結束後回飯店休息，等待 Green Tour 接駁 / Rest at the hotel after the balloon before the Green Tour pickup.",
       },
-    ],
-  },
-  {
-    date: "2026-09-26",
-    city: "cappadocia",
-    hotel: "Stone House Cave Hotel",
-    events: [
       {
-        time: "09:30-09:50",
+        time: "09:30-09:45",
         type: "activity",
-        title: "Ultra Green Tour 出發 / Departure",
-        location: "Cappadocia",
-        status: "idea",
-        note: "早上 09:30-09:50 出發，下午約 18:00 結束 / Depart 09:30-09:50, finish around 18:00.",
+        title: "Ultra Green Tour 接駁 / Pickup",
+        location: "Mithra Cave Hotel Cappadocia",
+        status: "confirmed",
+        note: "旅行團預計於 09:30-09:45 間接駁 / Tour pickup is expected between 09:30 and 09:45.",
       },
       {
         time: "Morning",
@@ -193,9 +179,40 @@ export const itinerary = [
     ],
   },
   {
+    date: "2026-09-25",
+    city: "cappadocia",
+    hotel: "Stone House Cave Hotel",
+    events: [
+      {
+        time: "TBD",
+        type: "plan",
+        title: "換飯店：Stone House Cave Hotel / Hotel Change",
+        location: "Cappadocia",
+        status: "confirmed",
+        note: "住宿 9/25-9/27 / Stay Sep 25-27",
+      },
+    ],
+  },
+  {
+    date: "2026-09-26",
+    city: "cappadocia",
+    hotel: "Stone House Cave Hotel",
+    focus: "flexible",
+    events: [
+      {
+        time: "Daytime",
+        type: "plan",
+        title: "卡帕多奇亞彈性日 / Flexible Cappadocia day",
+        location: "Göreme",
+        status: "todo",
+        note: "Green Tour 已改至 9/24；這天保留休息、補逛或自由安排 / Green Tour moved to Sep 24; keep this day flexible for rest or a casual walk.",
+      },
+    ],
+  },
+  {
     date: "2026-09-27",
     city: "istanbul",
-    hotel: "伊斯坦堡飯店待補 / Istanbul hotel TBD",
+    hotel: "伊斯坦堡住宿 / Istanbul hotel, Talimhane",
     events: [
       {
         time: "Daytime",
@@ -220,6 +237,14 @@ export const itinerary = [
         location: "Istanbul Airport",
         status: "confirmed",
         note: "伊斯坦堡停留約 69h 05m / Istanbul stopover about 69h 05m",
+      },
+      {
+        time: "After arrival",
+        type: "hotel",
+        title: "入住伊斯坦堡住宿 / Check in Istanbul hotel",
+        location: "Talimhane, Istanbul",
+        status: "confirmed",
+        note: "入住 9/27 14:00，退房 9/28 12:00，共 1 晚 / Check-in Sep 27 at 14:00, check-out Sep 28 at 12:00, 1 night.",
       },
     ],
   },
@@ -507,6 +532,13 @@ export const mapLinks = [
     query: "Gezi Hotel Bosphorus Istanbul",
   },
   {
+    category: "Hotel / 飯店",
+    name: "伊斯坦堡住宿 / Istanbul hotel, Talimhane",
+    area: "Talimhane / Istanbul",
+    address: "Talimhane, Istanbul, Turkey",
+    query: "Talimhane Istanbul Turkey",
+  },
+  {
     category: "Place / 景點",
     name: "Uchisar Village / 烏奇沙小鎮",
     area: "Cappadocia",
@@ -549,6 +581,7 @@ export const places = [
   {
     group: "伊斯坦堡 / Istanbul",
     items: [
+      "Istanbul hotel, Talimhane (9/27-9/28)",
       "Gezi Hotel Bosphorus, Istanbul (9/28-9/30)",
       "9/28 行程待補 / itinerary TBD",
       "9/29 行程待補 / itinerary TBD",
@@ -560,6 +593,7 @@ export const places = [
     items: [
       "Mithra Cave Hotel Cappadocia (9/23-9/25)",
       "Stone House Cave Hotel (9/25-9/27)",
+      "Istanbul hotel, Talimhane (9/27 14:00 - 9/28 12:00)",
       "Gezi Hotel Bosphorus, Istanbul (9/28 14:00 - 9/30 12:00)",
       "Gezi Hotel Bosphorus 住宿 9/28-9/30，共 2 晚 / 2-night stay",
     ],
@@ -588,4 +622,3 @@ export const tools = [
     text: "緊急聯絡、保險、住宿地址與常用連結待補；公開頁面避免放敏感個資 / Emergency contacts, insurance, hotel addresses, and useful links TBD; avoid sensitive personal info on public pages.",
   },
 ];
-

@@ -441,7 +441,75 @@ function renderPlaces() {
   const ideaMarkup = activePlaceIdeas && (activePlaceFilter === "all" || activePlaceFilter === "cappadocia" || activePlaceFilter === "istanbul")
     ? renderPlaceIdeas()
     : "";
-  el.innerHTML = mapCards + (activePlaceFilter === "all" || activePlaceFilter === "airports" ? airportCards : "") + (activePlaceFilter === "all" ? placeCards : "") + ideaMarkup;
+  const datedPlanMarkup = activePlaceIdeas && activePlaceIdeas.datedPlans && (activePlaceFilter === "all" || activePlaceFilter === "cappadocia" || activePlaceFilter === "istanbul")
+    ? renderDatedPlans()
+    : "";
+  const directoryOpen = activePlaceFilter === "all" ? "" : " open";
+  const locationDirectory = `
+    <details class="place-directory-section"${directoryOpen}>
+      <summary>
+        <span>
+          <span class="eyebrow">Locations / 地點</span>
+          <strong>地點與定位 / Locations & Maps</strong>
+        </span>
+        <span class="idea-badge">${activePlaceFilter === "all" ? "展開 / Open" : "查看 / View"}</span>
+      </summary>
+      <div class="place-directory-grid">
+        ${mapCards}
+        ${activePlaceFilter === "all" || activePlaceFilter === "airports" ? airportCards : ""}
+        ${activePlaceFilter === "all" ? placeCards : ""}
+      </div>
+    </details>
+  `;
+  el.innerHTML = datedPlanMarkup + ideaMarkup + locationDirectory;
+}
+
+function renderDatedPlans() {
+  const visiblePlans = activePlaceIdeas.datedPlans
+    .filter((plan) => activePlaceFilter === "all" || plan.city === activePlaceFilter)
+    .sort((a, b) => {
+      const getDay = (plan) => Number(plan.dateLabel.match(/\d+\/(\d+)/)?.[1] || 99);
+      return getDay(a) - getDay(b);
+    });
+  if (!visiblePlans.length) return "";
+  return `
+    <section class="place-idea-section dated-plans-section" aria-labelledby="datedPlansTitle">
+      <div class="place-idea-heading">
+        <div>
+          <p class="eyebrow">Date-based Plans / 日期安排</p>
+          <h3 id="datedPlansTitle">依住宿位置安排 / Based on where you stay</h3>
+        </div>
+        <span class="idea-badge">Private plan / 私人版</span>
+      </div>
+      <div class="dated-plan-list">
+        ${visiblePlans.map((plan) => `
+          <article class="dated-plan-card">
+            <div class="dated-plan-head">
+              <div>
+                <p class="eyebrow">${plan.dateLabel}</p>
+                <h4>${plan.title}</h4>
+              </div>
+              <span class="place-idea-meta">${plan.lodging}</span>
+            </div>
+            <p>${plan.summary}</p>
+            <div class="dated-plan-steps">
+              ${plan.steps.map((step) => `
+                <div class="dated-plan-step">
+                  <strong>${step.time}</strong>
+                  <div>
+                    <h5>${step.title}</h5>
+                    <span class="place-idea-meta">${step.area}</span>
+                    <p>${step.note}</p>
+                    ${step.query ? `<div class="map-actions"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(step.query)}">Open Location / 開啟定位</a></div>` : ""}
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
 }
 
 function renderPlaceIdeas() {
@@ -778,4 +846,3 @@ export function initDashboard({ budget = null, placeIdeas = null, tripData = nul
   setupNavigation();
   renderAll();
 }
-
