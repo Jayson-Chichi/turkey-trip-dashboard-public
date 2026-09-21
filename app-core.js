@@ -479,7 +479,7 @@ function renderDatedPlans() {
           <p class="eyebrow">Date-based Plans / 日期安排</p>
           <h3 id="datedPlansTitle">依住宿位置安排 / Based on where you stay</h3>
         </div>
-        <span class="idea-badge">Private plan / 私人版</span>
+        <span class="idea-badge">${activePlaceIdeas.isPrivate ? "Private plan / 私人版" : "Recommended plans / 推薦行程"}</span>
       </div>
       <div class="dated-plan-list">
         ${visiblePlans.map((plan) => `
