@@ -212,7 +212,7 @@ export const itinerary = [
   {
     date: "2026-09-27",
     city: "istanbul",
-    hotel: "伊斯坦堡住宿 / Istanbul hotel, Talimhane",
+    hotel: "Taksim Riva Hotel",
     events: [
       {
         time: "Daytime",
@@ -242,7 +242,7 @@ export const itinerary = [
         time: "After arrival",
         type: "hotel",
         title: "入住伊斯坦堡住宿 / Check in Istanbul hotel",
-        location: "Talimhane, Istanbul",
+        location: "Taksim Riva Hotel, Istanbul",
         status: "confirmed",
         note: "入住 9/27 14:00，退房 9/28 12:00，共 1 晚 / Check-in Sep 27 at 14:00, check-out Sep 28 at 12:00, 1 night.",
       },
@@ -533,10 +533,10 @@ export const mapLinks = [
   },
   {
     category: "Hotel / 飯店",
-    name: "伊斯坦堡住宿 / Istanbul hotel, Talimhane",
-    area: "Talimhane / Istanbul",
-    address: "Talimhane, Istanbul, Turkey",
-    query: "Talimhane Istanbul Turkey",
+    name: "Taksim Riva Hotel",
+    area: "Taksim / Istanbul",
+    address: "Taksim Riva Hotel, Istanbul, Turkey",
+    query: "Taksim Riva Hotel Istanbul",
   },
   {
     category: "Place / 景點",
@@ -581,7 +581,7 @@ export const places = [
   {
     group: "伊斯坦堡 / Istanbul",
     items: [
-      "Istanbul hotel, Talimhane (9/27-9/28)",
+      "Taksim Riva Hotel (9/27-9/28)",
       "Gezi Hotel Bosphorus, Istanbul (9/28-9/30)",
       "9/28 行程待補 / itinerary TBD",
       "9/29 行程待補 / itinerary TBD",
@@ -593,7 +593,7 @@ export const places = [
     items: [
       "Mithra Cave Hotel Cappadocia (9/23-9/25)",
       "Stone House Cave Hotel (9/25-9/27)",
-      "Istanbul hotel, Talimhane (9/27 14:00 - 9/28 12:00)",
+      "Taksim Riva Hotel (9/27 14:00 - 9/28 12:00)",
       "Gezi Hotel Bosphorus, Istanbul (9/28 14:00 - 9/30 12:00)",
       "Gezi Hotel Bosphorus 住宿 9/28-9/30，共 2 晚 / 2-night stay",
     ],
